@@ -77,17 +77,6 @@ export type QueryJobsArgs = {
   filter?: InputMaybe<JobFilter>;
 };
 
-export type ApplyInput = {
-  coverletter: string;
-  email: string;
-  jobId: string | number;
-  name: string;
-};
-
-export type JobStatus =
-  | 'closed'
-  | 'draft'
-  | 'open';
 
 export type ApplyToJobMutationVariables = Exact<{
   input: ApplyInput;
