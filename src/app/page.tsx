@@ -7,6 +7,7 @@ export const metadata: Metadata = {
   description: "Browse the latest software jobs",
 };
 import { GetJobsQuery } from "@/generated/graphql";
+export const dynamic="force-dynamic";
 export default async function Home() {
   const {data}=await client.query<GetJobsQuery>({
     query:GET_JOBS,

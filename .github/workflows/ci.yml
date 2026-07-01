@@ -30,4 +30,6 @@ jobs:
         run: npm test
 
       - name: Build Application
+        env:
+          NEXT_PUBLIC_GRAPHQL_URL: ${{ secrets.NEXT_PUBLIC_GRAPHQL_URL }}
         run: npm run build
