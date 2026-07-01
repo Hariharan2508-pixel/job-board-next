@@ -3,7 +3,7 @@ import { useState,useRef,useEffect } from "react";
 import { applyFormData, applySchema } from "../schemas/applySchema";
 import { useMutation} from "@apollo/client/react";
 import { APPLY_TO_JOB } from "../graphql/mutations";
-import { ApplyToJobMutation,ApplyToJobMutationVariables } from "../generated/graphql";
+import { ApplyToJobMutation,ApplyToJobMutationVariables } from "@/generated/graphql";
 interface ApplyModalprops {
     isOpen: boolean;
     onClose: () => void
@@ -13,6 +13,7 @@ jobId:string;
 const ApplyModal = ({
     isOpen, onClose,triggerRef,jobId
 }: ApplyModalprops) => {
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
     const [applyToJob,{loading,error:mutationError,}]=useMutation<ApplyToJobMutation,
     ApplyToJobMutationVariables>
     (APPLY_TO_JOB,{optimisticResponse:{applyToJob:"Application submitted"}});

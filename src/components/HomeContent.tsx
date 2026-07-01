@@ -1,6 +1,5 @@
 "use client";
 import { useState } from "react";
-import Header from "./Header";
 import FilterBar from "./FilterBar";
 import JobList from "./JobList";
 import {Job} from "@/types";

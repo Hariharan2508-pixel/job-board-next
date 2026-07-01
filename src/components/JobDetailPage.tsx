@@ -1,6 +1,5 @@
 import { formatSalary } from "../utility/formatSalary";
-import { Job } from "../generated/graphql";
-type GetJobData={job:Job;}
+import { Job } from "@/generated/graphql";
 interface Props{job:Job;}
 const JobDetailPage=({job}:Props)=>{
  return (

@@ -1,7 +1,6 @@
 "use client";
 import { useJobStore } from "../store/useJobStore";
-import Header from "./Header";
-export default async function SavedJobsPage() {
+export default  function SavedJobsPage() {
   
     //const { savedJobs } = useSavedJobs();
     const savedJobs=useJobStore((state)=>state.savedJobs);

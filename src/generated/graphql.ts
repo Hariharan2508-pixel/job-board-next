@@ -24,8 +24,8 @@ export type Company = {
   __typename?: 'Company';
   id?: Maybe<Scalars['ID']['output']>;
   location: Scalars['String']['output'];
+  logo: Scalars['String']['output'];
   name: Scalars['String']['output'];
-  logo?: Maybe<Scalars['String']['output']>;
 };
 
 export type Job = {
@@ -99,4 +99,11 @@ export type ApplyToJobMutation = { applyToJob: string };
 export type GetJobsQueryVariables = Exact<{ [key: string]: never; }>;
 
 
-export type GetJobsQuery = { jobs: Array<{ id: string, title: string, location: string, type: string, status: JobStatus, minSalary: number, maxSalary: number, company: { name: string, location: string } }> };
+export type GetJobsQuery = { jobs: Array<{ id: string, title: string, location: string, type: string, status: JobStatus, minSalary: number, maxSalary: number, company: { name: string, location: string, logo: string } }> };
+
+export type GetJobQueryVariables = Exact<{
+  id: string | number;
+}>;
+
+
+export type GetJobQuery = { job: { id: string, title: string, location: string, type: string, status: JobStatus, minSalary: number, maxSalary: number, company: { name: string, location: string, logo: string } } | null };

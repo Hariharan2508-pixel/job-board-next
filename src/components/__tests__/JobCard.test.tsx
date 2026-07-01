@@ -5,8 +5,7 @@ import { ApolloProvider } from "@apollo/client/react";
 import { client } from "@/lib/apolloClient";
 import {vi} from "vitest";
 import React from "react";
-import { useRouter } from "next/router";
-vi.mock("next/link",()=>({default:({children,href}:any)=>(<a href={href}>{children}</a>)}));
+vi.mock("next/link",()=>({default:({children,href}: React.PropsWithChildren<{ href: string }>)=>(<a href={href}>{children}</a>)}));
 vi.mock("../ApplyModal",()=>({default:()=><div>Mock ApplyModal</div>}));
 vi.mock("next-auth/react",()=>({useSession:()=>({
     data:{user:{name:"Hari",email:"hari@test.com",}},
